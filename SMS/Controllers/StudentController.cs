@@ -95,6 +95,7 @@ namespace SMS.Controllers
                 student.Name = vm.Name;
                 student.Sex = vm.Sex;
                 student.Address = vm.Address;
+                student.RollNo = vm.RollNo;
                 student.Grade = vm.Grade;
                 student.Faculty = vm.Faculty;
                 student.Faculty = vm.Faculty;
