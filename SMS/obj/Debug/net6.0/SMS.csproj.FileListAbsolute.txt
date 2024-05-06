@@ -362,3 +362,6 @@ E:\asp.net\apiexample\SMS\SMS\obj\Debug\net6.0\refint\SMS.dll
 E:\asp.net\apiexample\SMS\SMS\obj\Debug\net6.0\SMS.pdb
 E:\asp.net\apiexample\SMS\SMS\obj\Debug\net6.0\SMS.genruntimeconfig.cache
 E:\asp.net\apiexample\SMS\SMS\obj\Debug\net6.0\ref\SMS.dll
+E:\asp.net\apiexample\SMS\SMS\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.Views.dll
+E:\asp.net\apiexample\SMS\SMS\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll
+E:\asp.net\apiexample\SMS\SMS\bin\Debug\net6.0\Newtonsoft.Json.dll

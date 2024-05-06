@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Z29MOzDr9lGaUlG5KSf/6tL7mvozOAhJIQ2+gA8pFjwxLDBBbFoF8eS0+0Aj6owzZ/dfTJbbM5HE/5RZ17ladQ==",
+  "dgSpecHash": "f4fz2r44NoTtjpTfcfrYd7eyLF/TFV45vSqZmWb260r5aoQc7ndWkkOQPQ8ewHoo/dAmtz7fAEFy5TPhAFva3Q==",
   "success": true,
   "projectFilePath": "E:\\asp.net\\apiexample\\SMS\\SMS\\SMS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.20\\microsoft.aspnetcore.mvc.razor.extensions.6.0.20.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\6.0.20\\microsoft.aspnetcore.mvc.razor.runtimecompilation.6.0.20.nupkg.sha512",
@@ -29,6 +30,7 @@
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\npgsql\\6.0.9\\npgsql.6.0.9.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.8\\npgsql.entityframeworkcore.postgresql.6.0.8.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
