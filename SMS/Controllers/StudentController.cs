@@ -1,17 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Mvc;
 using SMS.Data;
 using SMS.Models;
 using SMS.ViewModel;
+using System.Collections.Specialized;
 
 namespace SMS.Controllers
 {
     public class StudentController : Controller
     {
         private readonly AppDbContext _context;
+        public INotyfService _notification { get; }
 
-        public StudentController(AppDbContext context)
+        public StudentController(AppDbContext context, INotyfService notification)
         {
             _context = context;
+            _notification = notification;
         }
         public IActionResult Index()
         {
@@ -33,7 +37,8 @@ namespace SMS.Controllers
         public IActionResult AddStudent(StudentVM vm) 
         {
             if (!ModelState.IsValid) {
-            
+
+             _notification.Error("not valid error");            
             return View(vm);    
             }
             var studentvm=new Student()
@@ -47,6 +52,7 @@ namespace SMS.Controllers
             };
             _context.StudentsTable.Add(studentvm);
             _context.SaveChanges();
+            _notification.Success("successfully added");
             return RedirectToAction("Students");
         }
 
@@ -55,6 +61,7 @@ namespace SMS.Controllers
             var user=_context.StudentsTable.Find(id);
             _context.Remove(user);
             _context.SaveChanges();
+            _notification.Error("user deleted");
             return RedirectToAction("Students");
         }
 
@@ -102,10 +109,12 @@ namespace SMS.Controllers
             
 
             _context.SaveChanges();
+                _notification.Success("updated successfully");
             return RedirectToAction("Students");
             }
             else
-            { return View(vm); }
+            {
+                return View(vm); }
         }
 
 
