@@ -28,6 +28,13 @@ namespace SMS.Repository.Implementation
           return  database.Find(id);
         }
 
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            IQueryable<T> query = database;
+            query = query.Where(filter);
+            return query.FirstOrDefault();
+        }
+
         public List<T> GetAll()
         {
             return database.ToList();
