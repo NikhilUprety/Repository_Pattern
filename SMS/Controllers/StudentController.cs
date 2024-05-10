@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SMS.Data;
 using SMS.Models;
+using SMS.Repository.Interface;
 using SMS.ViewModel;
 using System.Collections.Specialized;
 
@@ -9,12 +10,12 @@ namespace SMS.Controllers
 {
     public class StudentController : Controller
     {
-        private readonly AppDbContext _context;
+        public IStudentRepository _studentRepo;
         public INotyfService _notification { get; }
 
-        public StudentController(AppDbContext context, INotyfService notification)
+        public StudentController(IStudentRepository studentRepo, INotyfService notification)
         {
-            _context = context;
+            _studentRepo=studentRepo;
             _notification = notification;
         }
         public IActionResult Index()
@@ -24,7 +25,7 @@ namespace SMS.Controllers
 
         public IActionResult Students()
         {
-            var student = _context.StudentsTable.ToList();
+            var student = _studentRepo.GetAll();
             return View(student);
         }
 
@@ -50,17 +51,17 @@ namespace SMS.Controllers
                 Grade = vm.Grade,
                 Faculty = vm.Faculty,
             };
-            _context.StudentsTable.Add(studentvm);
-            _context.SaveChanges();
+            _studentRepo.Add(studentvm);
+            _studentRepo.save();
             _notification.Success("successfully added");
             return RedirectToAction("Students");
         }
 
         public IActionResult Delete(int id)
         {
-            var user=_context.StudentsTable.Find(id);
-            _context.Remove(user);
-            _context.SaveChanges();
+            var user=_studentRepo.FindById(id);
+            _studentRepo.Remove(user);
+            _studentRepo.save();
             _notification.Error("user deleted");
             return RedirectToAction("Students");
         }
@@ -68,7 +69,7 @@ namespace SMS.Controllers
         [HttpGet]
         public IActionResult Update(int id )
         {
-           var user= _context.StudentsTable.FirstOrDefault( x=>x.Id==id);
+           var user= _studentRepo.Get( x=>x.Id==id);
             if (user != null)
             {
                 var student = new UpdateVM()
@@ -94,7 +95,7 @@ namespace SMS.Controllers
                 return View(vm);
 
             }
-            var student = _context.StudentsTable.Find(vm.Id);  
+            var student = _studentRepo.FindById(vm.Id);  
             if(student != null)
             {
 
@@ -108,8 +109,8 @@ namespace SMS.Controllers
                 student.Faculty = vm.Faculty;
             
 
-            _context.SaveChanges();
-                _notification.Success("updated successfully");
+            _studentRepo.save();
+               _notification.Success("updated successfully");
             return RedirectToAction("Students");
             }
             else
